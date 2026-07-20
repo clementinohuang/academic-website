@@ -1,0 +1,12 @@
+{{- $link := .Get "link" }}
+<div class="book-text">{{ .Inner | markdownify }}</div>
+{{- with .Get "img" }}
+<figure class="book-fig">
+  {{- if $link }}<a href="{{ $link }}" target="_blank" rel="noopener">{{ end -}}
+  <img src="{{ . | absURL }}" alt="{{ with $.Get "alt" }}{{ . }}{{ else }}cover{{ end }}" loading="lazy">
+  {{- if $link }}</a>{{ end -}}
+  {{- with $.Get "caption" }}
+  <figcaption>{{ if $link }}<a href="{{ $link }}" target="_blank" rel="noopener">{{ . | markdownify }}</a>{{ else }}{{ . | markdownify }}{{ end }}</figcaption>
+  {{- end }}
+</figure>
+{{- end }}

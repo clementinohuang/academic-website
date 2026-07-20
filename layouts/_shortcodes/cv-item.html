@@ -1,0 +1,6 @@
+<div class="cv-item">
+  <div class="cv-item-title{{ if eq (.Get "plain") "true" }} cv-item-title-plain{{ end }}">
+    {{ .Get "title" | markdownify }}
+  </div>
+  {{- with .Inner }}<div class="cv-item-note">{{ . | markdownify }}</div>{{ end -}}
+</div>

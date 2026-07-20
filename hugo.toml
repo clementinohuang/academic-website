@@ -1,0 +1,111 @@
+# ===== 基本信息 =====
+baseURL = "https://example.org/"   # 上线部署时再改成真实网址
+title = "Clement Qiang Huang"              # 浏览器标签页标题
+theme = "PaperMod"
+
+defaultContentLanguage = "en"      # 英文放在网站根路径 /
+enableRobotsTXT = true
+
+# ===== 全站共享的主题参数 =====
+[params]
+defaultTheme = "light"
+disableThemeToggle = true
+ShowReadingTime = false
+ShowShareButtons = false
+ShowPostNavLinks = false
+ShowBreadCrumbs = false
+ShowCodeCopyButtons = false
+disableScrollToTop = true
+displayFullLangName = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 2
+
+[params.social]
+email = "clemh@yorku.ca"
+  orcid = ""          # 例如 https://orcid.org/0000-0000-0000-0000
+  scholar = ""        # Google Scholar 个人页网址
+  bluesky = "https://bsky.app/profile/clemhuang.bsky.social"        # 例如 https://bsky.app/profile/xxx
+  linkedin = ""
+  instagram = "https://www.instagram.com/clementinohuang/"
+  github = ""
+  academia = ""
+  researchgate = ""
+  facebook = "https://www.facebook.com/profile.php?id=100009196528522"
+  youtube = ""
+  zhihu = ""
+  douban = ""
+
+# ===== 三种语言 =====
+
+# ---------- English：完整版 ----------
+[languages.en]
+languageName = "English"
+languageCode = "en"
+contentDir = "content/en"
+weight = 1
+
+[[languages.en.menus.main]]
+name = "Research"
+url = "/research/"
+weight = 10
+
+[[languages.en.menus.main]]
+name = "Works"
+url = "/works/"
+weight = 20
+
+[[languages.en.menus.main]]
+name = "CV"
+url = "/cv/"
+weight = 30
+
+# ---------- Français ----------
+[languages.fr]
+languageName = "Français"
+languageCode = "fr"
+contentDir = "content/fr"
+weight = 2
+
+[[languages.fr.menus.main]]
+name = "Recherche"
+url = "/research/"
+weight = 10
+
+[[languages.fr.menus.main]]
+name = "Travaux"
+url = "/works/"
+weight = 20
+
+[[languages.fr.menus.main]]
+name = "CV"
+url = "/cv/"
+weight = 30
+
+# ---------- 中文 ----------
+[languages.zh]
+languageName = "中文"
+languageCode = "zh-Hans"
+contentDir = "content/zh"
+hasCJKLanguage = true
+weight = 3
+
+[[languages.zh.menus.main]]
+name = "研究"
+url = "/research/"
+weight = 10
+
+[[languages.zh.menus.main]]
+name = "发表"
+url = "/works/"
+weight = 20
+
+[[languages.zh.menus.main]]
+name = "简历"
+url = "/cv/"
+weight = 30

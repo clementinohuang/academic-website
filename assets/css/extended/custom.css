@@ -1,0 +1,461 @@
+/* =====================================================
+   自定义设计：薰衣草渐变 × 深紫 × Source Serif 4 / 思源宋体
+   正文 Light(300)，一切加粗为 SemiBold(600)
+   ===================================================== */
+
+/* ---- 1. 配色与尺寸变量 ---- */
+:root {
+    --theme: transparent;
+    --entry: rgba(255, 255, 255, 0.5);
+    --primary: #2a1e33;
+    --secondary: #6d5f7e;
+    --tertiary: #ddd2ec;
+    --border: #e6def2;
+    --tertiary-hover: #cdbfe6;   /* 药丸悬停+按下 */
+    --figure-width: 280px;
+
+    /* 正文区宽度 = 导航栏宽度的 80% */
+    --main-width: calc(var(--nav-width) * 0.8);
+
+    /* 链接紫色梯度 */
+    --link: #53387f;
+    --link-hover: #8b74ba;
+}
+
+/* ---- 2. 不规则浅紫—白渐变背景 ---- */
+body,
+body.list {
+    background: transparent;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(58rem 40rem at 12% -8%, rgba(183, 160, 221, 0.42), transparent 62%),
+        radial-gradient(46rem 34rem at 96% 16%, rgba(203, 186, 235, 0.32), transparent 60%),
+        radial-gradient(64rem 46rem at 24% 112%, rgba(219, 208, 242, 0.48), transparent 62%),
+        radial-gradient(30rem 24rem at 80% 74%, rgba(193, 175, 228, 0.22), transparent 58%),
+        #fdfcff;
+}
+
+/* ---- 3. 字体与字重 ---- */
+body {
+    font-family: "Source Serif 4", Georgia, "Palatino Linotype", Palatino,
+        "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+    font-weight: 300;
+    line-height: 1.75;
+}
+/* 一切粗体统一为 SemiBold */
+b, strong,
+h1, h2, h3, h4, h5, h6,
+.post-title,
+
+/* ---- 4. 两栏布局：左 2/3 内容，右 1/3 图片 ---- */
+.page-cols {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: calc(var(--gap) * 2.5);
+    align-items: start;
+}
+.home-cols {
+    padding-top: 3rem;
+}
+.home-cols .col-side {
+    justify-self: center;
+}
+.side-figure {
+    margin: 0;
+}
+.side-figure img {
+    display: block;
+    width: 100%;
+    max-width: var(--figure-width);
+    height: auto;
+    border-radius: 4px;
+    outline: 1px solid var(--border);
+    outline-offset: 4px;
+}
+.side-figure figcaption {
+    margin-top: 14px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--secondary);
+}
+@media screen and (max-width: 768px) {
+    .page-cols {
+        grid-template-columns: 1fr;
+        gap: var(--gap);
+    }
+    .home-cols {
+        padding-top: 1rem;
+    }
+}
+
+/* ---- 5. 字号（整体缩小一档）---- */
+.post-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.post-content {
+    color: var(--primary);
+    font-size: 14px;
+}
+
+/* Page section headings match the page title without becoming oversized. */
+.post-content h2 {
+    color: var(--primary);
+    font-size: 18px;
+    line-height: 1.35;
+}
+
+/* ---- 6. 正文链接：紫色灰度，无下划线 ---- */
+.post-content a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.post-content a:hover {
+    color: var(--link-hover);
+}
+.post-content a:active {
+    color: var(--primary);
+}
+
+/* ---- 7. 导航栏：默认正文色 → hover 浅紫 → 当前项正文色 SemiBold ---- */
+.logo a {
+    font-size: 21px;
+    transition: color 0.15s ease;
+}
+.logo a:hover {
+    color: var(--link-hover);
+}
+
+#menu a {
+    color: var(--primary);
+    font-size: 15px;
+    transition: color 0.15s ease;
+}
+#menu a:hover {
+    color: var(--link-hover);
+}
+#menu a:active {
+    color: var(--primary);
+}
+#menu span.active {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* 语言下拉菜单 */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.lang-dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    user-select: none;
+    transition: color 0.15s ease;
+}
+.lang-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+.lang-dropdown summary::marker {
+    content: "";
+}
+.lang-dropdown summary:hover {
+    color: var(--link-hover);
+}
+.lang-caret {
+    font-size: 9px;
+    line-height: 1;
+    transition: transform 0.15s ease;
+}
+.lang-dropdown details[open] .lang-caret {
+    transform: rotate(180deg);
+}
+.lang-dropdown .lang-list {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 6px);
+    margin: 0;
+    padding: 3px 0;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 8px 28px rgba(42, 30, 51, 0.1);
+    z-index: 100;
+}
+.lang-list li a {
+    display: block;
+    padding: 4px 12px;
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+}
+.lang-list li a:hover {
+    color: var(--link-hover);
+}
+.lang-list li a.lang-active {
+    font-weight: 600;
+}
+
+/* ---- 侧栏小节导航（sidetoc: true 的页面）---- */
+html {
+    scroll-behavior: smooth;
+}
+.post-content h2 {
+    scroll-margin-top: 24px;
+}
+.col-side-sticky {
+    position: sticky;
+    top: 32px;
+    align-self: start;
+}
+.side-pdf {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    font-size: 15px;
+    color: var(--primary);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: color 0.15s ease;
+}
+.side-pdf:hover {
+    color: var(--link-hover);
+}
+.side-toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.side-toc a {
+    display: block;
+    padding: 3px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.row-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) 1fr;
+    column-gap: 48px;
+    align-items: start;
+}
+.row-grid > * {
+    grid-column: 1;
+    margin-inline: 0;
+}
+.row-grid > .book-fig {
+    grid-column: 2;
+    justify-self: center;
+    max-width: var(--figure-width);
+    margin: 0 0 16px;
+}
+.row-grid > .book-fig-span {
+    grid-row: 1 / span 60;
+}
+@media screen and (max-width: 768px) {
+    .row-grid {
+        grid-template-columns: 1fr;
+    }
+    .row-grid > .book-fig {
+        grid-column: 1;
+        justify-self: center;
+        margin: 8px 0 16px;
+    }
+}
+
+.book-fig {
+    margin: 0 0 12px;
+    max-width: var(--figure-width);
+}
+.book-fig > a {
+    display: block;
+}
+.book-fig img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    outline: 1px solid var(--border);
+    outline-offset: 4px;
+}
+.book-fig figcaption {
+    margin-top: 10px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--secondary);
+}
+.book-fig figcaption a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.book-fig figcaption a:hover {
+    color: var(--link-hover);
+}
+@media screen and (max-width: 768px) {
+    .wide-grid .post-content {
+        grid-template-columns: 1fr;
+    }
+    .wide-grid .post-content > .book-fig {
+        grid-column: 1;
+    }
+}
+
+/* ---- CV: borderless, structured rows ---- */
+.cv-fact {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    column-gap: 18px;
+    padding: 3px 0;
+}
+.cv-fact strong {
+    white-space: nowrap;
+    color: var(--primary);
+}
+.cv-row {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: start;
+    margin: 0 0 1.25rem;
+}
+.cv-period {
+    color: var(--secondary);
+    white-space: nowrap;
+}
+.cv-role {
+    color: var(--primary);
+    font-weight: 600;
+    line-height: 1.55;
+}
+.cv-meta {
+    color: var(--secondary);
+    line-height: 1.55;
+}
+.cv-location::before {
+    content: " · ";
+}
+.cv-description {
+    margin-top: 0.2rem;
+    line-height: 1.6;
+}
+.cv-description p {
+    margin: 0;
+}
+.cv-item-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 16px;
+    margin: 0 0 1.4rem;
+}
+.cv-item-title {
+    color: var(--primary);
+    font-weight: 600;
+    line-height: 1.45;
+}
+.cv-item-title-plain {
+    font-weight: 300;
+}
+.cv-item-note {
+    margin-top: 2px;
+    color: var(--secondary);
+    line-height: 1.55;
+}
+.cv-item-note p {
+    margin: 0;
+}
+@media screen and (max-width: 640px) {
+    .cv-row {
+        grid-template-columns: 70px minmax(0, 1fr);
+        column-gap: 14px;
+    }
+    .cv-item-grid {
+        grid-template-columns: 1fr;
+        row-gap: 12px;
+    }
+}
+.side-toc a:hover {
+    color: var(--link-hover);
+}
+@media screen and (max-width: 768px) {
+    .col-side-sticky {
+        position: static;
+    }
+}
+
+/* ---- 8. 按钮与其余细节 ---- */
+
+.post-content blockquote {
+    border-inline-start: 2px solid var(--tertiary);
+}
+.post-content hr {
+    background: var(--border);
+    height: 1px;
+}
+.footer {
+    color: var(--secondary);
+    opacity: 0.85;
+}
+.post-content .book-fig figcaption,
+.post-content .side-figure figcaption {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+}
+.social-icons a {
+    display: inline-flex;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.social-icons a:hover {
+    color: var(--link-hover);
+}
+.social-icons svg {
+    width: 21px;
+    height: 21px;
+}
+
+.home-portrait {
+    margin-top: 0.4rem;
+}
+.home-sections {
+    margin-top: 2.5rem;
+}
+.home-name {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}

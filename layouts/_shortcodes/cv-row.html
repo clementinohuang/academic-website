@@ -1,0 +1,11 @@
+<div class="cv-row">
+  <div class="cv-period">{{ .Get "period" | markdownify }}</div>
+  <div class="cv-main">
+    {{- with .Get "title" }}<div class="cv-role">{{ . | markdownify }}</div>{{ end -}}
+    <div class="cv-meta">
+      {{- with .Get "institution" }}<span class="cv-institution">{{ . | markdownify }}</span>{{ end -}}
+      {{- with .Get "location" }}<span class="cv-location">{{ . | markdownify }}</span>{{ end -}}
+    </div>
+    {{- with .Inner }}<div class="cv-description">{{ . | markdownify }}</div>{{ end -}}
+  </div>
+</div>

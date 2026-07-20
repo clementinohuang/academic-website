@@ -1,0 +1,10 @@
+{{- $link := .Get "link" }}
+{{- $span := eq (.Get "span") "all" }}
+<figure class="book-fig{{ if $span }} book-fig-span{{ end }}">
+  {{- if $link }}<a href="{{ $link }}" target="_blank" rel="noopener">{{ end -}}
+  <img src="{{ .Get "img" | absURL }}" alt="{{ with .Get "alt" }}{{ . }}{{ else }}figure{{ end }}" loading="lazy">
+  {{- if $link }}</a>{{ end -}}
+  {{- with .Get "caption" }}
+  <figcaption>{{ . | markdownify }}</figcaption>
+  {{- end }}
+</figure>

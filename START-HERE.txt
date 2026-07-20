@@ -1,0 +1,27 @@
+清理 + 合并后的完整网站
+========================
+这是你整个 Hugo 网站的最新完整版本，已包含至今为止的所有内容与改动：
+  · 首页/Research/Works/CV 五页，三语（EN/ZH/FR）
+  · 紫色调色板已从 13 合并到 8（集中在 custom.css 顶部 :root）
+  · 已删除废弃文件（旧 contact 页、bookfig 短代码）和死 CSS
+  · 主题 PaperMod 已作为普通文件夹内置，解压即可用，无需 git
+
+本地预览
+--------
+1. 确保装了 Hugo（Mac: brew install hugo）。
+2. 终端 cd 进 my-site 文件夹。
+3. 运行:  hugo server
+4. 浏览器打开 http://localhost:1313
+
+日常编辑入口
+------------
+· 文字内容：content/en|zh|fr/ 下的 .md 文件
+· 颜色/样式：assets/css/extended/custom.css（所有紫色在顶部 :root）
+· 首页头像：static/photo.jpg
+· 站点配置/菜单/社交链接：hugo.toml
+
+推上线（GitHub Pages）时的提醒
+------------------------------
+· 已附 .gitignore（忽略 public/ 和 .DS_Store 等）。
+· 主题现为普通文件（非子模块），直接 git 提交即可，最省事。
+· 需要我带你走 GitHub Pages 部署流程时再说。

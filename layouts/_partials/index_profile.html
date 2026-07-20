@@ -1,0 +1,30 @@
+{{- $parts := split .Content "<h2" }}
+{{- $intro := index $parts 0 }}
+{{- $rest := "" }}
+{{- if gt (len $parts) 1 }}
+  {{- $tail := after 1 $parts }}
+  {{- $rest = printf "<h2%s" (delimit $tail "<h2") }}
+{{- end }}
+
+<div class="page-cols home-cols">
+    <div class="col-main">
+        {{- with .Title }}<h1 class="home-name">{{ . }}</h1>{{ end }}
+        {{- with $intro }}
+        <div class="post-content md-content home-intro">{{ . | safeHTML }}</div>
+        {{- end }}
+    </div>
+    <aside class="col-side">
+        {{- with .Params.portrait }}
+        <figure class="side-figure home-portrait">
+            <img draggable="false" src="{{ . | absURL }}" alt="{{ $.Params.portraitAlt | default "portrait" }}" />
+            {{- with $.Params.portraitCaption }}
+            <figcaption>{{ . | markdownify }}</figcaption>
+            {{- end }}
+        </figure>
+        {{- end }}
+    </aside>
+</div>
+
+{{- with $rest }}
+<div class="post-content md-content home-sections">{{ . | safeHTML }}</div>
+{{- end }}

@@ -1,0 +1,55 @@
+{{- define "main" }}
+
+{{- if .Params.wide }}
+<article class="post-single wide-grid">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+  {{- if .Content }}
+  <div class="post-content md-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+</article>
+{{- else }}
+<article class="post-single">
+  <div class="page-cols">
+    <div class="col-main">
+      <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+      </header>
+      {{- if .Content }}
+      <div class="post-content md-content">
+        {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+        {{- else }}{{ .Content }}{{ end }}
+      </div>
+      {{- end }}
+    </div>
+    <aside class="col-side{{ if .Params.sidetoc }} col-side-sticky{{ end }}">
+      {{- with .Params.sideimage }}
+      <figure class="side-figure">
+        <img src="{{ . | absURL }}" alt="{{ $.Params.sidecaption | default $.Title }}" />
+        {{- with $.Params.sidecaption }}
+        <figcaption>{{ . | markdownify }}</figcaption>
+        {{- end }}
+      </figure>
+      {{- end }}
+      {{- if .Params.sidetoc }}
+      <div class="side-block">
+        {{- with .Params.cvpdf }}
+        <a class="side-pdf" href="{{ . | absURL }}" target="_blank" rel="noopener">{{ $.Params.cvpdflabel | default "Download PDF" }}</a>
+        {{- end }}
+        <nav class="side-toc" aria-label="Sections">
+          {{ .TableOfContents }}
+        </nav>
+      </div>
+      {{- end }}
+    </aside>
+  </div>
+</article>
+{{- end }}
+
+{{- end }}{{/* end main */}}
