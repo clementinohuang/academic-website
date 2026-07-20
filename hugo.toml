@@ -1,5 +1,5 @@
 # ===== 基本信息 =====
-baseURL = "https://example.org/"   # 上线部署时再改成真实网址
+baseURL = "https://clemhuang.com/"   # 上线部署时再改成真实网址
 title = "Clement Qiang Huang"              # 浏览器标签页标题
 theme = "PaperMod"
 
