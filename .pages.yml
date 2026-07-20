@@ -1,0 +1,166 @@
+media:
+  - name: images
+    label: Images
+    input: static/images
+    output: /images
+    rename: safe
+    extensions:
+      - jpg
+      - jpeg
+      - png
+      - webp
+      - gif
+      - svg
+
+  - name: documents
+    label: Documents
+    input: static
+    output: /
+    rename: false
+    extensions:
+      - pdf
+
+content:
+  - name: english
+    label: English
+    type: collection
+    path: content/en
+    format: yaml-frontmatter
+    subfolders: false
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+
+      - name: wide
+        label: Wide layout
+        type: boolean
+
+      - name: sidetoc
+        label: Show side table of contents
+        type: boolean
+
+      - name: portrait
+        label: Portrait path
+        type: string
+
+      - name: portraitAlt
+        label: Portrait description
+        type: string
+
+      - name: cvpdf
+        label: CV PDF path
+        type: string
+
+      - name: cvpdflabel
+        label: CV PDF button label
+        type: string
+
+      - name: body
+        label: Page content
+        type: code
+        options:
+          format: markdown
+
+  - name: french
+    label: Français
+    type: collection
+    path: content/fr
+    format: yaml-frontmatter
+    subfolders: false
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Titre de la page
+        type: string
+        required: true
+
+      - name: wide
+        label: Mise en page large
+        type: boolean
+
+      - name: sidetoc
+        label: Afficher la table des matières
+        type: boolean
+
+      - name: portrait
+        label: Chemin du portrait
+        type: string
+
+      - name: portraitAlt
+        label: Description du portrait
+        type: string
+
+      - name: cvpdf
+        label: Chemin du CV PDF
+        type: string
+
+      - name: cvpdflabel
+        label: Texte du bouton PDF
+        type: string
+
+      - name: body
+        label: Contenu de la page
+        type: code
+        options:
+          format: markdown
+
+  - name: chinese
+    label: 中文
+    type: collection
+    path: content/zh
+    format: yaml-frontmatter
+    subfolders: false
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: 页面标题
+        type: string
+        required: true
+
+      - name: wide
+        label: 使用宽页面
+        type: boolean
+
+      - name: sidetoc
+        label: 显示侧边目录
+        type: boolean
+
+      - name: portrait
+        label: 头像路径
+        type: string
+
+      - name: portraitAlt
+        label: 头像说明
+        type: string
+
+      - name: cvpdf
+        label: CV PDF 路径
+        type: string
+
+      - name: cvpdflabel
+        label: PDF 按钮文字
+        type: string
+
+      - name: body
+        label: 页面内容
+        type: code
+        options:
+          format: markdown
