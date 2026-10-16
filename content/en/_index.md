@@ -14,7 +14,7 @@ My doctoral research is supported by a [Canada Graduate Research Scholarship –
 ## What's New
 
 {{< cv-row period="August 2026" >}}
-My paper presented at the 50th Annual Conference of the French Colonial Historical Society in Maynooth received an [Honorable Mention for the W. J. Eccles Prize](https://frenchcolonial.org/awards-prizes/).
+My paper presented at the 50th Annual Conference of the French Colonial Historical Society in Maynooth received an [Honourable Mention for the W. J. Eccles Prize](https://frenchcolonial.org/awards-prizes/).
 {{< /cv-row >}}
 
 {{< cv-row period="Jul 2026" >}}
