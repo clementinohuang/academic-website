@@ -1,10 +1,10 @@
 ---
-title: "CV"
+title: CV
+wide: false
 sidetoc: true
-cvpdf: "/cv.pdf"
-cvpdflabel: "Download full CV (PDF)"
+cvpdf: /cv.pdf
+cvpdflabel: Download full CV (PDF)
 ---
-
 ## Basics
 
 {{< cv-fact label="Field" value="History of Science" >}}
@@ -50,6 +50,9 @@ Minor in Economics. Thesis: “Sacred Moments of the Senses: Ferdinand Hodler’
 {{< /cv-grid >}}
 
 ## Awards & Grants
+
+{{< cv-row period="2026" institution="French Colonial Historical Society" title="W. J. Eccles Prize, Honourable Mention" >}}
+{{< /cv-row >}}
 
 {{< cv-row period="2026–2029" institution="Social Sciences and Humanities Research Council (SSHRC)" title="Canada Graduate Research Scholarship—Doctoral" >}}
 {{< /cv-row >}}
