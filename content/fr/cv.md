@@ -1,10 +1,10 @@
 ---
-title: "CV"
+title: CV
+wide: false
 sidetoc: true
-cvpdf: "/cv.pdf"
-cvpdflabel: "Télécharger le CV complet (PDF)"
+cvpdf: /cv.pdf
+cvpdflabel: Télécharger le CV complet (PDF)
 ---
-
 ## Informations générales
 
 {{< cv-fact label="Domaine" value="Histoire des sciences" >}}
@@ -50,6 +50,9 @@ Mineure en économie. Mémoire : « Sacred Moments of the Senses: Ferdinand Hodl
 {{< /cv-grid >}}
 
 ## Bourses et distinctions
+
+{{< cv-row period="2026" institution="Société d’histoire coloniale française" title="Prix W. J. Eccles, mention honorable" >}}
+{{< /cv-row >}}
 
 {{< cv-row period="2026–2029" institution="Conseil de recherches en sciences humaines (CRSH)" title="Bourse de recherche du Canada au doctorat" >}}
 {{< /cv-row >}}
