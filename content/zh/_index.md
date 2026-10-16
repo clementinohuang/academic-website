@@ -1,9 +1,10 @@
 ---
-title: "黄强"
-portrait: "/photo.jpg"
-portraitAlt: "黄强"
+title: 黄强
+wide: false
+sidetoc: false
+portrait: /photo.jpg
+portraitAlt: 黄强
 ---
-
 科学史方向博士生，研究十九世纪中法之间在自然史领域的相遇。
 
 现就读于加拿大多伦多的约克大学。我对科学、艺术与宗教诸种认识传统之间的全球性交叉传播抱有浓厚的兴趣，也是一个热衷学习语言的人，始终好奇于那些跨越边界者的动机、被边界跨越者的经历。
@@ -12,12 +13,12 @@ portraitAlt: "黄强"
 
 ## 我的近况
 
-{{< cv-row period="2026 年 7 月" >}}
-在 2026 年 [ESHS/HSS 联合年会](https://hssonline.org/page/Edinburgh26)的 "Imperial Botany in Asia" 专题上宣读论文。
+{{< cv-row period="2026 年 9 月" >}}
+我在法国殖民史学会于梅努斯举行的第50届年会上宣读的论文获得了 [W. J. Eccles 奖荣誉提名](https://frenchcolonial.org/awards-prizes/)。
 {{< /cv-row >}}
 
-{{< cv-row period="2026 年 6 月" >}}
-获法国殖民史学会颁发的 [Shorrock 旅行基金](https://frenchcolonial.org/awards-prizes/)，并在其于梅努斯举行的第五十届年会上宣读论文。
+{{< cv-row period="2026 年 7 月" >}}
+在 2026 年 [ESHS/HSS 联合年会](https://hssonline.org/page/Edinburgh26)的 "Imperial Botany in Asia" 专题上宣读论文。
 {{< /cv-row >}}
 
 [全部报告与出版 →](talks/)
