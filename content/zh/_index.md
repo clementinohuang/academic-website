@@ -13,7 +13,7 @@ portraitAlt: 黄强
 
 ## 我的近况
 
-{{< cv-row period="2026 年 9 月" >}}
+{{< cv-row period="2026 年 8 月" >}}
 我在法国殖民史学会于梅努斯举行的第50届年会上宣读的论文获得了 [W. J. Eccles 奖荣誉提名](https://frenchcolonial.org/awards-prizes/)。
 {{< /cv-row >}}
 
