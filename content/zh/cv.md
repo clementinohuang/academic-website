@@ -1,10 +1,10 @@
 ---
-title: "简历"
+title: 简历
+wide: false
 sidetoc: true
-cvpdf: "/cv.pdf"
-cvpdflabel: "下载完整简历（PDF）"
+cvpdf: /cv.pdf
+cvpdflabel: 下载完整简历（PDF）
 ---
-
 ## 基本信息
 
 {{< cv-fact label="领域" value="科学史" >}}
@@ -50,6 +50,9 @@ cvpdflabel: "下载完整简历（PDF）"
 {{< /cv-grid >}}
 
 ## 奖项与资助
+
+{{< cv-row period="2026" institution="法国殖民史学会" title="W. J. Eccles 奖，荣誉提名" >}}
+{{< /cv-row >}}
 
 {{< cv-row period="2026–2029" institution="社会科学与人文研究理事会（SSHRC）" title="加拿大博士研究奖学金" >}}
 {{< /cv-row >}}
