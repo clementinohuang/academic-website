@@ -1,9 +1,10 @@
 ---
-title: "Clement Qiang Huang"
-portrait: "/photo.jpg"
-portraitAlt: "Clement Qiang Huang"
+title: Clement Qiang Huang
+wide: false
+sidetoc: false
+portrait: /photo.jpg
+portraitAlt: Clement Qiang Huang
 ---
-
 PhD student in the History of Science, studying nineteenth-century Sino-French encounters in the field of natural history.
 
 Based at York University, Toronto, Canada, I have broad interests in the global cross-pollination between epistemic traditions of science, art, and religion. I am an avid language learner, always curious about the experiences and motivations of beings that moved, or were moved, across borders.
@@ -12,12 +13,12 @@ My doctoral research is supported by a [Canada Graduate Research Scholarship –
 
 ## What's New
 
-{{< cv-row period="Jul 2026" >}}
-I presented my paper at the 2026 [ESHS/HSS Joint Meeting](https://hssonline.org/page/Edinburgh26) in the panel "Imperial Botany in Asia."
+{{< cv-row period="August 2026" >}}
+My paper presented at the 50th Annual Conference of the French Colonial Historical Society in Maynooth received an [Honorable Mention for the W. J. Eccles Prize](https://frenchcolonial.org/awards-prizes/).
 {{< /cv-row >}}
 
-{{< cv-row period="Jun 2026" >}}
-I received a [Shorrock Travel Fund](https://frenchcolonial.org/awards-prizes/) award from the French Colonial Historical Society and presented my paper at its 50th Annual Meeting in Maynooth.
+{{< cv-row period="Jul 2026" >}}
+I presented my paper at the 2026 [ESHS/HSS Joint Meeting](https://hssonline.org/page/Edinburgh26) in the panel "Imperial Botany in Asia."
 {{< /cv-row >}}
 
 [All talks & publications →](talks/)
